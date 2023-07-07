@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit Cards</title>
+  <style>
+    .card {
+      width: 300px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <% for (const {name, weight, description} of fruits) { %>
+  <div class="card">
+    <h2><%= name %></h2>
+    <p><strong>Weight:</strong> <%= weight %>g</p>
+    <p><strong>Description:</strong><%= description %></p>
+  </div>
+
+  <% } %>
+
+</body>
+</html>
