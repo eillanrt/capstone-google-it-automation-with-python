@@ -15,10 +15,24 @@ app.use(express.urlencoded({ extended: false }))
 
 app.set('view engine', 'ejs')
 
+const fruits = [{name: 'apple', weight: 22, description: 'Apple is great'}]
+
 app.post('/upload', upload.single('file'), (req, res) => {
   console.log(req.file)
 
   res.redirect('/')
+})
+
+app.post('/fruits', (req, res) => {
+  const {name, weight, description} = req.body
+
+  fruits.push({name, weight, description})
+
+  res.redirect('/fruits')
+})
+
+app.get('/fruits', (req, res) => {
+  res.render('fruits', { fruits })
 })
 
 app.get('/', (req, res) => {
