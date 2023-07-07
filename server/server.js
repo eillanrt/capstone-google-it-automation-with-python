@@ -1,16 +1,26 @@
 const express = require('express')
 const cors = require('cors')
+const multer = require('multer')
 const app = express()
 
+const path = require('path')
+const os = require('os')
 const port = 3000
 
+const upload = multer({ dest: path.join('public', 'media', 'images') })
+
+app.use(express.static('public'))
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 
 app.set('view engine', 'ejs')
 
-app.post('/upload', (req,res) => {})
+app.post('/upload', upload.single('file'), (req, res) => {
+  console.log(req.file)
+
+  res.redirect('/')
+})
 
 app.get('/', (req, res) => {
   res.render('index')
@@ -21,5 +31,5 @@ app.use((req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Servr now listening in port: ${port}`)
+  console.log(`Server now listening in port: ${port}`)
 })
