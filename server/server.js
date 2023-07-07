@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.set('view engine', 'ejs')
 
-const fruits = [{name: 'apple', weight: 22, description: 'Apple is great'}]
+const fruits = []
 
 app.post('/upload', upload.single('file'), (req, res) => {
   console.log(req.file)
