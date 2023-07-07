@@ -4,5 +4,4 @@ node_modules/
 *.pdf
 secret.txt
 playground.py
-public/media/images/*
-!public/media/images/.gitkeep 
+

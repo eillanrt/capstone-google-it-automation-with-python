@@ -4,7 +4,6 @@ const multer = require('multer')
 const app = express()
 
 const path = require('path')
-const os = require('os')
 const port = 3000
 
 const upload = multer({ dest: path.join('public', 'media', 'images') })
