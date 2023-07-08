@@ -24,7 +24,7 @@ def generate(sender, recipient, subject, body, filepath=None):
 
   return message
 
-def send(message):
+def send_email(message):
   mail_server = smtplib.SMTP_SSL('smtp.mail.yahoo.com', 465)
   mail_server.set_debuglevel(1)
 
