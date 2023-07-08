@@ -11,7 +11,6 @@ def generate_report(attachment, title, paragraph):
 
   parsed_paragraph = [Spacer(16, 16) if line == '' else Paragraph(line, paragraph_style) for line in paragraph.split('\n')]
 
-  for flowable in parsed_paragraph:
-    report_content.append(flowable)
+  report_content += parsed_paragraph
 
   report.build(report_content)
