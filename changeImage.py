@@ -6,7 +6,6 @@ images_path = os.path.join('supplier-data', 'images')
 
 def correctify_image(image_path):
   desired_size = (600, 400)
-  filename = os.path.basename(image_path)
 
   with Image.open(image_path) as img:
     img.resize(desired_size).convert('RGB').save(image_path, format='jpeg')
