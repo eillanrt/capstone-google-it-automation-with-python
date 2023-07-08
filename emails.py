@@ -4,7 +4,7 @@ import getpass
 import os
 import mimetypes
 
-def generate(sender, recipient, subject, body, filepath=None):
+def generate_email(sender, recipient, subject, body, filepath=None):
   message = EmailMessage()
 
   message['From'] = sender
