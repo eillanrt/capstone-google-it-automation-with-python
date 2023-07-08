@@ -3,5 +3,3 @@ node_modules/
 .vscode/
 *.pdf
 secret.txt
-playground.py
-
